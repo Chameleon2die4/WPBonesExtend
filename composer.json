@@ -1,7 +1,6 @@
 {
     "name": "chameleon2die4/wpbones-extend",
     "description": "This library add additional functionality for WP Bones framework.",
-    "version": "1.0.0",
     "homepage": "https://github.com/Chameleon2die4/WPBonesExtend",
     "type": "library",
     "license": "GPL-3.0-only",
