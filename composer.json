@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "homepage": "https://github.com/Chameleon2die4/WPBonesExtend",
     "type": "library",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-only",
     "authors": [
         {
             "name": "Chameleon2die4",
