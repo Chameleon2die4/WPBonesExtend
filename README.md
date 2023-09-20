@@ -36,7 +36,7 @@ It's copy new bones files, with new commands. Additional copy stubs templates fo
 
 ## WP Bones features
 
-New bones commands:
+### New bones commands:
 ```
 make:service            Create a new Service
 make:resource           Create a new Resource
@@ -44,4 +44,14 @@ make:meta               Create a new MetaBox
 
 migrate:up              Run your migrations
 migrate:rollback        Run rollback for your migrations
+```
+
+### New migrations
+```
+    $this->create("your_table", function (Blueprint $table){
+        $table->id();
+        $table->integer('user_id')->nullable();
+        $table->string('name');
+        $table->string('link')->nullable();
+    });
 ```
