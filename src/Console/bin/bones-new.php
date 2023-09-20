@@ -633,14 +633,17 @@ namespace Bones
             $kernelClass = "{$namespace}\\Console\\Kernel";
             $WPBonesKernelClass = "{$namespace}\\WPBones\\Foundation\\Console\\Kernel";
             $additionalKernelClass = "{$namespace}\\WPBonesExtend\\Console\\Kernel";
+            $additionalOriginKernelClass = "Chameleon2die4\\WPBonesExtend\\Console\\Kernel";
 
             try {
                 if (class_exists($WPBonesKernelClass) && class_exists($kernelClass)) {
                     $this->kernel = new $kernelClass;
                 }
 
-                if (class_exists($WPBonesKernelClass) && class_exists($kernelClass)) {
+                if (class_exists($WPBonesKernelClass) && class_exists($additionalKernelClass)) {
                     $this->additionalKernel = new $additionalKernelClass;
+                } elseif (class_exists($WPBonesKernelClass) && class_exists($additionalOriginKernelClass)) {
+                    $this->additionalKernel = new $additionalOriginKernelClass;
                 }
             } catch (Exception $e) {
                 echo "\n\033[33;5;82mWarning!!\n";
@@ -873,6 +876,10 @@ namespace Bones
 
             // change namespace
             foreach ($files as $file) {
+                if (!file_exists($file)) {
+                    continue;
+                }
+
                 $this->line("Loading and process {$file}...");
 
                 $content = file_get_contents($file);
@@ -1278,7 +1285,7 @@ namespace Bones
             } elseif (in_array($command, $additionalCommands)) {
                 $extended = false;
 
-                if ($this->kernel) {
+                if ($this->additionalKernel) {
                     $extended = $this->additionalKernel->handle($this->arguments());
                 }
 

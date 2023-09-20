@@ -204,6 +204,10 @@ abstract class Command extends BaseCommand
 
     public function createFile(string $base, string $content, array $params)
     {
+        if (!file_exists($base)) {
+            mkdir($base, 0777, true);
+        }
+
         if (!empty($params['path']) && !empty($params['namespacePath'])) {
             $content = str_replace('{Path}', $params['namespacePath'], $content);
             mkdir("{$base}/{$params['path']}", 0777, true);
