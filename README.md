@@ -30,7 +30,7 @@ You can configure your `composer.json` to copy files when you update your depend
 },
 ```
 
-If you rename plugin change Chameleon2die4 to your namespace.
+If you rename plugin - change Chameleon2die4 to your namespace.
 
 It's copy new bones files, with new commands. Additional copy stubs templates for commands.
 
