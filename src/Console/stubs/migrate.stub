@@ -1,0 +1,28 @@
+<?php
+
+use {Namespace}\Support\Database\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Capsule\Manager as Capsule;
+
+/**
+* Class {ClassName}
+*/
+return new class extends Migration {
+
+  protected string $table = 'table_name';
+
+  public function up()
+  {
+        if (!Capsule::schema()->hasTable($this->table)) {
+            Capsule::schema()->create($this->table, function (Blueprint $table) {
+                $table->id();
+            });
+        }
+  }
+
+  public function down()
+  {
+    Capsule::schema()->dropIfExists('{TableName}');
+  }
+
+};

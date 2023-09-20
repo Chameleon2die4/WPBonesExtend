@@ -1,0 +1,10 @@
+<?php
+
+namespace {Namespace}\Http\Services{Path};
+
+use {Namespace}\Support\Servicea\Servicea;
+
+class {ClassName} extends Servicea
+{
+
+}

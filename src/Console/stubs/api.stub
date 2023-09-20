@@ -1,0 +1,14 @@
+<?php
+
+namespace {Namespace}\Http\Controllers\Api{Path};
+
+if (! defined('ABSPATH')) {
+    exit;
+}
+
+use {Namespace}\WPBones\Routing\API\RestController;
+
+class {ClassName} extends RestController
+{
+
+}

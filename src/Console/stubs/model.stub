@@ -1,0 +1,14 @@
+<?php
+
+namespace {Namespace}\Models{Path};
+
+if (! defined('ABSPATH')) {
+    exit;
+}
+
+use {Namespace}\Support\Model\Model;
+
+class {ClassName} extends Model
+{
+
+}

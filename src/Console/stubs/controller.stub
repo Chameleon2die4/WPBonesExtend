@@ -1,0 +1,34 @@
+<?php
+
+namespace {Namespace}\Http\Controllers{Path};
+
+if (! defined('ABSPATH')) {
+    exit;
+}
+
+use {Namespace}\Http\Controllers\Controller;
+
+class {ClassName} extends Controller
+{
+
+  public function index()
+  {
+    // GET
+  }
+
+  public function store()
+  {
+    // POST
+  }
+
+  public function update()
+  {
+    // PUT AND PATCH
+  }
+
+  public function destroy()
+  {
+    // DELETE
+  }
+
+}

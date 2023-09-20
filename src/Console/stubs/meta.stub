@@ -1,0 +1,15 @@
+<?php
+
+namespace {Namespace}\Http\MetaBox;
+
+use {Namespace}\Support\MetaBox\{UseType};
+
+class {ClassName} extends {UseType}
+{
+
+    public function save(int $id)
+    {
+        // TODO: Implement save() method.
+    }
+
+}
