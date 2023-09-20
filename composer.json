@@ -13,7 +13,6 @@
     ],
     "require": {
         "php": ">=7.4.0",
-        "ext-json": "*",
         "wpbones/wpbones": "^1.2"
     },
     "autoload": {
