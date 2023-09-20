@@ -18,3 +18,20 @@ Browse into directory and run;
 ```shell
 $ composer require chameleon2die4/wpbones-extend
 ```
+
+You can configure your `composer.json` to copy files when you update your dependencies:
+
+```
+...
+"scripts": {
+    "post-update-cmd": [
+        "Chameleon2die4\\WPBonesExtend\\WPBonesExtend::copyInitFiles"
+    ]
+},
+```
+
+If you rename plugin change Chameleon2die4 to your namespace.
+
+It's copy new bones files, with new commands. Additional copy stubs templates for commands.
+
+After files will be copied, you can remove this part from `composer.json`.
