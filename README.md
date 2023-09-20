@@ -32,6 +32,16 @@ You can configure your `composer.json` to copy files when you update your depend
 
 If you rename plugin - change Chameleon2die4 to your namespace.
 
-It's copy new bones files, with new commands. Additional copy stubs templates for commands.
+It's copy new bones files, with new commands. Additional copy stubs templates for commands. After files will be copied, you can remove this part from `composer.json`.
 
-After files will be copied, you can remove this part from `composer.json`.
+## WP Bones features
+
+New bones commands:
+```
+make:service            Create a new Service
+make:resource           Create a new Resource
+make:meta               Create a new MetaBox
+
+migrate:up              Run your migrations
+migrate:rollback        Run rollback for your migrations
+```
