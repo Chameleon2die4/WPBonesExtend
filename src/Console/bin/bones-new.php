@@ -850,7 +850,8 @@ namespace Bones
                 // exclude node_modules and bones executable
                 if (
                   false !== strpos($e, "node_modules") ||
-                  false !== strpos($e, "vendor/wpbones/wpbones/src/Console/bin/bones")
+                  false !== strpos($e, "vendor/wpbones/wpbones/src/Console/bin/bones") ||
+                  false !== strpos($e, "vendor/chameleon2die4/wpbones-extend/src/Console/bin/")
                 ) {
                     return false;
                 }
