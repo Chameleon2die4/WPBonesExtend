@@ -1096,9 +1096,7 @@ namespace Bones
          */
         public function getPluginSlug($str = null): string
         {
-            $str = $this->getSnakeCasePluginName($str);
-
-            return $str . '_slug';
+            return $this->getSnakeCasePluginName($str);
         }
 
         /**
