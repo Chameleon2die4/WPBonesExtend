@@ -2,7 +2,7 @@
 
 namespace {Namespace}\Console\Commands;
 
-use {Namespace}\Support\Console\Command;
+use {Namespace}\WPBonesExtend\Console\Command;
 
 class {ClassName} extends Command
 {

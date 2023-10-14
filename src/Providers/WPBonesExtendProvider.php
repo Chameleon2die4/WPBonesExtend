@@ -11,14 +11,14 @@ class WPBonesExtendProvider extends ServiceProvider
     public function register()
     {
         $this->slug = $this->getPluginSlug();
-        
+
         // Init services
         $classes = $this->plugin->config('plugin.services', []);
         foreach ($classes as $className) {
             new $className($this->plugin);
         }
-        
-        
+
+
         // Add admin settings link to plugins page
         if (function_exists('add_filter')) {
             $plugin_file = "{$this->slug}/index.php";
@@ -40,7 +40,7 @@ class WPBonesExtendProvider extends ServiceProvider
 
         return $links;
     }
-    
+
 
     /**
      * Return the plugin slug.

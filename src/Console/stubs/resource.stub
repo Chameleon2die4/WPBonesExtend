@@ -2,10 +2,10 @@
 
 namespace {Namespace}\Http\Resources{Path};
 
-use {Namespace}\Support\Resource\Resource;
+use {Namespace}\WPBonesExtend\Resource\Resource;
 
 /**
- * @method static {Namespace}\Support\Collection collection({Namespace}\WPBones\Database\Support\Collection|{Namespace}\Support\Collection|array $data, \WP_REST_Request $request = null)
+ * @method static {Namespace}\WPBonesExtend\Collection collection({Namespace}\WPBones\Database\Support\Collection|{Namespace}\WPBonesExtend\Collection|array $data, \WP_REST_Request $request = null)
  */
 class {ClassName} extends Resource
 {

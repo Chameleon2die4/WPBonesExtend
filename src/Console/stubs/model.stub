@@ -6,7 +6,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-use {Namespace}\Support\Model\Model;
+use {Namespace}\WPBonesExtend\Model\Model;
 
 class {ClassName} extends Model
 {

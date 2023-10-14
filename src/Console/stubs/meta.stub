@@ -2,7 +2,7 @@
 
 namespace {Namespace}\Http\MetaBox;
 
-use {Namespace}\Support\MetaBox\{UseType};
+use {Namespace}\WPBonesExtend\MetaBox\{UseType};
 
 class {ClassName} extends {UseType}
 {

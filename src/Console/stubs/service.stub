@@ -2,9 +2,9 @@
 
 namespace {Namespace}\Http\Services{Path};
 
-use {Namespace}\Support\Servicea\Servicea;
+use {Namespace}\WPBonesExtend\Services\Services;
 
-class {ClassName} extends Servicea
+class {ClassName} extends Services
 {
 
 }
