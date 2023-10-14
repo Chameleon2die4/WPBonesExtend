@@ -13,7 +13,7 @@ return new class extends Migration {
   public function up()
   {
     // Create your table
-    $this->create($this->table function (Blueprint $table){
+    $this->create($this->table, function (Blueprint $table){
         $table->id();
     });
   }
