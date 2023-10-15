@@ -2363,6 +2363,10 @@ namespace Bones
                 $content = str_replace('{Path}', '', $content);
             }
 
+            if (!file_exists("plugin/Http/Controllers/API")) {
+                mkdir("plugin/Http/Controllers/API", 0777, true);
+            }
+
             $filename = sprintf('%s.php', $className);
             $filepath = "plugin/Http/Controllers/API/{$path}{$filename}";
 
