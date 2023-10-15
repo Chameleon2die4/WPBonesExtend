@@ -325,7 +325,7 @@ abstract class Command extends BaseCommand
     /** @noinspection PhpUndefinedFunctionInspection */
     public function getPluginPath() {
         $path = plugin_dir_path( __DIR__ );
-        $exp = explode('/vendor/', $path);
+        $exp = explode(DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR, $path);
         return $exp[0];
     }
 
