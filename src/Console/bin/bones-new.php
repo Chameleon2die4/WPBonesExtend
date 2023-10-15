@@ -2245,6 +2245,10 @@ namespace Bones
                 $content = str_replace('{Path}', '', $content);
             }
 
+            if (!file_exists("plugin/Models")) {
+                mkdir("plugin/Models", 0777, true);
+            }
+
             $filename = sprintf('%s.php', $className);
             $filepath = "plugin/Models/{$path}{$filename}";
 
