@@ -1,6 +1,6 @@
 <?php
 
-namespace {Namespace}\Http\MetaBox;
+namespace {Namespace}\MetaBox;
 
 use {Namespace}\WPBonesExtend\MetaBox\{UseType};
 

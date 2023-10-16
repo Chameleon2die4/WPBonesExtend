@@ -3,6 +3,7 @@
 namespace Chameleon2die4\WPBonesExtend\Console\Commands;
 
 use Chameleon2die4\WPBonesExtend\Console\Command;
+use Chameleon2die4\WPBonesExtend\Str;
 
 class MakeMeta extends Command
 {
@@ -33,7 +34,12 @@ class MakeMeta extends Command
           '{UseType}' => $useType,
         ]);
 
-        $this->createFile('plugin/Http/MetaBox', $content, $vars);
+        $view = Str::snake($className);
+
+        $this->createFile('plugin/MetaBox', $content, $vars);
+        $this->createFile('resources/views/meta', $content, [
+            'className' => $view,
+        ]);
     }
 
     public function getUseTypeName(string $type) {

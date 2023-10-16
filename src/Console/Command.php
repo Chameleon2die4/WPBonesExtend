@@ -208,7 +208,8 @@ abstract class Command extends BaseCommand
             mkdir($base, 0777, true);
         }
 
-        if (!empty($params['path']) && !empty($params['namespacePath'])) {
+        $path = $params['path'] ?? '';
+        if (!empty($path) && !empty($params['namespacePath'])) {
             $content = str_replace('{Path}', $params['namespacePath'], $content);
             mkdir("{$base}/{$params['path']}", 0777, true);
         } else {
@@ -216,7 +217,7 @@ abstract class Command extends BaseCommand
         }
 
         $filename = sprintf('%s.php', $params['className']);
-        $filepath = "{$base}/{$params['path']}{$filename}";
+        $filepath = "{$base}/{$path}{$filename}";
         if (!file_exists($filepath)) {
             file_put_contents($filepath, $content);
             $this->line("Created {$filepath}");
