@@ -16,19 +16,19 @@ abstract class Migration extends Builder
     /**
      * @var string
      */
-    private $charsetCollate;
+    protected string $tableName;
     /**
      * @var string
      */
-    protected $tableName;
+    protected string $table;
+
 
     public function __construct()
     {
         global $wpdb;
 
         $this->db = $wpdb;
-        $this->charsetCollate = $wpdb->get_charset_collate();
-        $this->tableName      = $wpdb->prefix . Str::snake(Str::studly(get_called_class()));
+        $this->tableName = $wpdb->prefix . $this->table;
 
         parent::__construct();
     }
@@ -42,6 +42,22 @@ abstract class Migration extends Builder
     public function setTableName(string $tableName): void
     {
         $this->tableName = $this->db->prefix . $tableName;
+    }
+
+    /**
+     * @param  string  $tableName
+     *
+     * @return bool
+     */
+    public function tableExist(string $tableName) {
+        if (!preg_match("/^{$this->db->prefix}/", $tableName)) {
+            $tableName = $this->db->prefix . $tableName;
+        }
+
+        $query = $this->db->prepare( 'SHOW TABLES LIKE %s',
+            $this->db->esc_like( $tableName ) );
+
+        return $this->db->get_var( $query ) == $tableName;
     }
 
 }
