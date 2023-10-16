@@ -37,7 +37,7 @@ class MakeMeta extends Command
         $view = Str::snake($className);
 
         $this->createFile('plugin/MetaBox', $content, $vars);
-        $this->createFile('resources/views/meta', $content, [
+        $this->createFile('resources/views/meta', '', [
             'className' => $view,
         ]);
     }
