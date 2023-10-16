@@ -25,6 +25,13 @@ final class WPBonesExtend
 
             copy($file, $stubs . $name);
         }
+
+        $config = $path . 'config/';
+        foreach (glob($dir . '/config/*.php') as $file) {
+            $name = basename($file);
+
+            copy($file, $config . $name);
+        }
     }
 
 }

@@ -2,10 +2,6 @@
 
 namespace Chameleon2die4\WPBonesExtend\Providers;
 
-if (! defined('ABSPATH')) {
-    exit;
-}
-
 use WPKirk\WPBones\Support\ServiceProvider;
 
 class MetaProvider extends ServiceProvider
