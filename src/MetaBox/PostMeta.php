@@ -26,4 +26,11 @@ abstract class PostMeta extends MetaBox
         }
     }
 
+    public function generateScreens(): array
+    {
+        $exclude = ['attachment'];
+        $types = get_post_types(['public' => true, '_builtin' => true]);
+        return array_diff(array_keys($types), $exclude);
+    }
+
 }

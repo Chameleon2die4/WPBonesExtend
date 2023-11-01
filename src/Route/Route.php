@@ -12,8 +12,8 @@ class Route extends BaseRoute
      * @param string|array $callback
      * @return void
      */
-    public static function get(string $url, $callback) {
-        self::callMethod('get', $url, $callback);
+    public static function get(string $url, $callback, $args = []) {
+        self::callMethod('get', $url, $callback, $args);
     }
 
     /**
@@ -21,8 +21,8 @@ class Route extends BaseRoute
      * @param string|array $callback
      * @return void
      */
-    public static function post(string $url, $callback) {
-        self::callMethod('post', $url, $callback);
+    public static function post(string $url, $callback, $args = []) {
+        self::callMethod('post', $url, $callback, $args);
     }
 
     /**
@@ -30,8 +30,8 @@ class Route extends BaseRoute
      * @param string|array $callback
      * @return void
      */
-    public static function put(string $url, $callback) {
-        self::callMethod('put', $url, $callback);
+    public static function put(string $url, $callback, $args = []) {
+        self::callMethod('put', $url, $callback, $args);
     }
 
     /**
@@ -40,8 +40,8 @@ class Route extends BaseRoute
      * @return void
      * @noinspection PhpUnused
      */
-    public static function patch(string $url, $callback) {
-        self::callMethod('patch', $url, $callback);
+    public static function patch(string $url, $callback, $args = []) {
+        self::callMethod('patch', $url, $callback, $args);
     }
 
     /**
@@ -49,8 +49,8 @@ class Route extends BaseRoute
      * @param string|array $callback
      * @return void
      */
-    public static function delete(string $url, $callback) {
-        self::callMethod('delete', $url, $callback);
+    public static function delete(string $url, $callback, $args) {
+        self::callMethod('delete', $url, $callback, $args);
     }
 
     /**
@@ -59,12 +59,12 @@ class Route extends BaseRoute
      * @param mixed $callback
      * @return void
      */
-    public static function callMethod(string $method, string $url, $callback) {
+    public static function callMethod(string $method, string $url, $callback, $args = []) {
         if (is_array($callback)) {
             $callback = implode('@', $callback);
         }
 
-        call_user_func_array([parent::class, $method], [$url, $callback, []]);
+        call_user_func_array([parent::class, $method], [$url, $callback, $args]);
     }
 
 }
